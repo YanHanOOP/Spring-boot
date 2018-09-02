@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Teacher Info</title>
+</head>
+<body>
+
+<br/>
+<h1>Teacher Information</h1>
+<br/><br/>
+<div class="with:80%">
+    <table>
+        <thead>
+        <tr>
+            <th>Teacher Id</th>
+            <th>Teacher Name</th>
+            <th>Courses</th>
+            <th>Download</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+        <tr th:each="teacher:${teachers}">
+            <td th:text="${teacher.id}"></td>
+            <td th:text="${teacher.name}"></td>
+            <td th:text="${teacher.course}"></td>
+            <td><a th:href="@{/download(fileName=${teacher.img})}">Click to start</a></td>
+        </tr>
+        </tbody>
+        
+    </table>
+</div>
+
+</body>
+</html>
